@@ -14,56 +14,42 @@
         },
         "version": "1.0"
     },
-    "basePath": "/api/v1",
+    "basePath": "/",
     "paths": {
         "/api/v1/auth/change-password": {
             "put": {
-                "security": [
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "users"
-                ],
+                "security": [{
+                    "ApiKeyAuth": []
+                }],
+                "produces": ["application/json"],
+                "tags": ["users"],
                 "summary": "changes the password",
-                "parameters": [
-                    {
-                        "description": "Body",
-                        "name": "_",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/dto.ChangePasswordReq"
-                        }
+                "parameters": [{
+                    "description": "Body",
+                    "name": "_",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/dto.ChangePasswordReq"
                     }
-                ],
+                }],
                 "responses": {}
             }
         },
         "/api/v1/auth/login": {
             "post": {
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "users"
-                ],
+                "produces": ["application/json"],
+                "tags": ["users"],
                 "summary": "Login",
-                "parameters": [
-                    {
-                        "description": "Body",
-                        "name": "_",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/dto.LoginReq"
-                        }
+                "parameters": [{
+                    "description": "Body",
+                    "name": "_",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/dto.LoginReq"
                     }
-                ],
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -76,17 +62,11 @@
         },
         "/api/v1/auth/me": {
             "get": {
-                "security": [
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "users"
-                ],
+                "security": [{
+                    "ApiKeyAuth": []
+                }],
+                "produces": ["application/json"],
+                "tags": ["users"],
                 "summary": "get my profile",
                 "responses": {
                     "200": {
@@ -100,24 +80,18 @@
         },
         "/api/v1/auth/register": {
             "post": {
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "users"
-                ],
+                "produces": ["application/json"],
+                "tags": ["users"],
                 "summary": "Register new user",
-                "parameters": [
-                    {
-                        "description": "Body",
-                        "name": "_",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/dto.RegisterReq"
-                        }
+                "parameters": [{
+                    "description": "Body",
+                    "name": "_",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/dto.RegisterReq"
                     }
-                ],
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -130,20 +104,13 @@
         },
         "/api/v1/orders": {
             "get": {
-                "security": [
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "orders"
-                ],
+                "security": [{
+                    "ApiKeyAuth": []
+                }],
+                "produces": ["application/json"],
+                "tags": ["orders"],
                 "summary": "get my orders",
-                "parameters": [
-                    {
+                "parameters": [{
                         "type": "string",
                         "name": "code",
                         "in": "query"
@@ -164,29 +131,21 @@
                 }
             },
             "post": {
-                "security": [
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "orders"
-                ],
+                "security": [{
+                    "ApiKeyAuth": []
+                }],
+                "produces": ["application/json"],
+                "tags": ["orders"],
                 "summary": "place order",
-                "parameters": [
-                    {
-                        "description": "Body",
-                        "name": "_",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/dto.PlaceOrderReq"
-                        }
+                "parameters": [{
+                    "description": "Body",
+                    "name": "_",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/dto.PlaceOrderReq"
                     }
-                ],
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -199,27 +158,19 @@
         },
         "/api/v1/orders/{id}": {
             "get": {
-                "security": [
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "orders"
-                ],
+                "security": [{
+                    "ApiKeyAuth": []
+                }],
+                "produces": ["application/json"],
+                "tags": ["orders"],
                 "summary": "get order details",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Order ID",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
+                "parameters": [{
+                    "type": "string",
+                    "description": "Order ID",
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -232,38 +183,26 @@
         },
         "/api/v1/orders/{id}/cancel": {
             "put": {
-                "security": [
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "orders"
-                ],
+                "security": [{
+                    "ApiKeyAuth": []
+                }],
+                "produces": ["application/json"],
+                "tags": ["orders"],
                 "summary": "cancel order",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Order ID",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
+                "parameters": [{
+                    "type": "string",
+                    "description": "Order ID",
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }],
                 "responses": {}
             }
         },
         "/api/v1/products": {
             "get": {
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "products"
-                ],
+                "produces": ["application/json"],
+                "tags": ["products"],
                 "summary": "Get list products",
                 "responses": {
                     "200": {
@@ -275,67 +214,46 @@
                 }
             },
             "post": {
-                "security": [
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "products"
-                ],
+                "security": [{
+                    "ApiKeyAuth": []
+                }],
+                "produces": ["application/json"],
+                "tags": ["products"],
                 "summary": "create product",
-                "parameters": [
-                    {
-                        "description": "Body",
-                        "name": "_",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/dto.CreateProductReq"
-                        }
+                "parameters": [{
+                    "description": "Body",
+                    "name": "_",
+                    "in": "body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/dto.CreateProductReq"
                     }
-                ],
+                }],
                 "responses": {}
             }
         },
         "/api/v1/products/{id}": {
             "get": {
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "products"
-                ],
+                "produces": ["application/json"],
+                "tags": ["products"],
                 "summary": "Get product by id",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "Product ID",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
+                "parameters": [{
+                    "type": "string",
+                    "description": "Product ID",
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }],
                 "responses": {}
             },
             "put": {
-                "security": [
-                    {
-                        "ApiKeyAuth": []
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "products"
-                ],
+                "security": [{
+                    "ApiKeyAuth": []
+                }],
+                "produces": ["application/json"],
+                "tags": ["products"],
                 "summary": "update product",
-                "parameters": [
-                    {
+                "parameters": [{
                         "type": "string",
                         "description": "Product ID",
                         "name": "id",
@@ -359,10 +277,7 @@
     "definitions": {
         "dto.ChangePasswordReq": {
             "type": "object",
-            "required": [
-                "new_password",
-                "password"
-            ],
+            "required": ["new_password", "password"],
             "properties": {
                 "new_password": {
                     "type": "string"
@@ -374,10 +289,7 @@
         },
         "dto.CreateProductReq": {
             "type": "object",
-            "required": [
-                "description",
-                "name"
-            ],
+            "required": ["description", "name"],
             "properties": {
                 "description": {
                     "type": "string"
@@ -420,10 +332,7 @@
         },
         "dto.LoginReq": {
             "type": "object",
-            "required": [
-                "email",
-                "password"
-            ],
+            "required": ["email", "password"],
             "properties": {
                 "email": {
                     "type": "string"
@@ -486,10 +395,7 @@
         },
         "dto.PlaceOrderLineReq": {
             "type": "object",
-            "required": [
-                "product_id",
-                "quantity"
-            ],
+            "required": ["product_id", "quantity"],
             "properties": {
                 "product_id": {
                     "type": "string"
@@ -501,10 +407,7 @@
         },
         "dto.PlaceOrderReq": {
             "type": "object",
-            "required": [
-                "lines",
-                "user_id"
-            ],
+            "required": ["lines", "user_id"],
             "properties": {
                 "lines": {
                     "type": "array",
@@ -520,10 +423,7 @@
         },
         "dto.RegisterReq": {
             "type": "object",
-            "required": [
-                "email",
-                "password"
-            ],
+            "required": ["email", "password"],
             "properties": {
                 "email": {
                     "type": "string"
