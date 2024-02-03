@@ -24,4 +24,5 @@ services:
     image: "postgres:latest"
     environment:
       DATABASE_USER: splax
-      POSTGRES_PASSWORD: Killindem
+      POSTGRES_PASSWORD: Killindem1
+      POSTGRES_DB: postgres

@@ -4,24 +4,24 @@
 ?   	goshop/internal/cart/model	[no test files]
 === RUN   TestCartHandlerTestSuite
 === RUN   TestCartHandlerTestSuite/TestCartAPI_AddProductFail
-2024-02-03T17:53:05.615+0100	ERROR	grpc/handlers.go:41	Failed to add product error
+2024-02-03T18:59:42.068+0100	ERROR	grpc/handlers.go:41	Failed to add product error
     ICartService.go:106: PASS:	AddProduct(string,*dto.AddProductReq)
 === RUN   TestCartHandlerTestSuite/TestCartAPI_AddProductSuccess
     ICartService.go:106: PASS:	AddProduct(string,*dto.AddProductReq)
 === RUN   TestCartHandlerTestSuite/TestCartAPI_AddProductUnauthorized
 === RUN   TestCartHandlerTestSuite/TestCartAPI_GetCartFail
-2024-02-03T17:53:05.616+0100	ERROR	grpc/handlers.go:78	Failed to get cart error
+2024-02-03T18:59:42.069+0100	ERROR	grpc/handlers.go:78	Failed to get cart error
     ICartService.go:106: PASS:	GetCartByUserID(string,string)
 === RUN   TestCartHandlerTestSuite/TestCartAPI_GetCartSuccess
     ICartService.go:106: PASS:	GetCartByUserID(string,string)
 === RUN   TestCartHandlerTestSuite/TestCartAPI_GetCartUnauthorized
 === RUN   TestCartHandlerTestSuite/TestCartAPI_RemoveProductFail
-2024-02-03T17:53:05.617+0100	ERROR	grpc/handlers.go:61	Failed to remove product error
+2024-02-03T18:59:42.070+0100	ERROR	grpc/handlers.go:61	Failed to remove product error
     ICartService.go:106: PASS:	RemoveProduct(string,*dto.RemoveProductReq)
 === RUN   TestCartHandlerTestSuite/TestCartAPI_RemoveProductSuccess
     ICartService.go:106: PASS:	RemoveProduct(string,*dto.RemoveProductReq)
 === RUN   TestCartHandlerTestSuite/TestCartAPI_RemoveProductUnauthorized
---- PASS: TestCartHandlerTestSuite (0.00s)
+--- PASS: TestCartHandlerTestSuite (0.01s)
     --- PASS: TestCartHandlerTestSuite/TestCartAPI_AddProductFail (0.00s)
     --- PASS: TestCartHandlerTestSuite/TestCartAPI_AddProductSuccess (0.00s)
     --- PASS: TestCartHandlerTestSuite/TestCartAPI_AddProductUnauthorized (0.00s)
@@ -35,7 +35,7 @@
 --- PASS: TestRegisterHandlers (0.00s)
 PASS
 coverage: 5.5% of statements in ./...
-ok  	goshop/internal/cart/port/grpc	2.326s	coverage: 5.5% of statements in ./...
+ok  	goshop/internal/cart/port/grpc	3.471s	coverage: 5.5% of statements in ./...
 === RUN   TestCartRepositoryTestSuite
 === RUN   TestCartRepositoryTestSuite/TestCreateCartFail
     IDatabase.go:214: PASS:	Create(string,*model.Cart)
@@ -58,7 +58,7 @@ ok  	goshop/internal/cart/port/grpc	2.326s	coverage: 5.5% of statements in ./...
     --- PASS: TestCartRepositoryTestSuite/TestUpdateCartSuccessfully (0.00s)
 PASS
 coverage: 3.6% of statements in ./...
-ok  	goshop/internal/cart/repository	1.429s	coverage: 3.6% of statements in ./...
+ok  	goshop/internal/cart/repository	7.215s	coverage: 3.6% of statements in ./...
 ?   	goshop/internal/cart/repository/mocks	[no test files]
 === RUN   TestCartServiceTestSuite
 === RUN   TestCartServiceTestSuite/TestAddProductAlreadyExistInCart
@@ -76,7 +76,7 @@ ok  	goshop/internal/cart/repository	1.429s	coverage: 3.6% of statements in ./..
     ICartRepository.go:80: PASS:	GetCartByUserID(string,string)
     ICartRepository.go:80: PASS:	Update(string,*model.Cart)
 === RUN   TestCartServiceTestSuite/TestAddProductUpdateFail
-2024-02-03T17:53:11.030+0100	ERROR	service/cart.go:86	AddProductReq.Update fail, userID: userID, error: error
+2024-02-03T18:59:43.027+0100	ERROR	service/cart.go:86	AddProductReq.Update fail, userID: userID, error: error
     ICartRepository.go:80: PASS:	GetCartByUserID(string,string)
     ICartRepository.go:80: PASS:	Update(string,*model.Cart)
 === RUN   TestCartServiceTestSuite/TestGetCartByUserIDCreateFail
@@ -99,7 +99,7 @@ ok  	goshop/internal/cart/repository	1.429s	coverage: 3.6% of statements in ./..
     ICartRepository.go:80: PASS:	GetCartByUserID(string,string)
     ICartRepository.go:80: PASS:	Update(string,*model.Cart)
 === RUN   TestCartServiceTestSuite/TestRemoveProductUpdateFail
-2024-02-03T17:53:11.034+0100	ERROR	service/cart.go:119	RemoveProductReq.Update fail, userID: userID, error: error
+2024-02-03T18:59:43.031+0100	ERROR	service/cart.go:119	RemoveProductReq.Update fail, userID: userID, error: error
     ICartRepository.go:80: PASS:	GetCartByUserID(string,string)
     ICartRepository.go:80: PASS:	Update(string,*model.Cart)
 --- PASS: TestCartServiceTestSuite (0.01s)
@@ -122,7 +122,7 @@ ok  	goshop/internal/cart/repository	1.429s	coverage: 3.6% of statements in ./..
     --- PASS: TestCartServiceTestSuite/TestRemoveProductUpdateFail (0.00s)
 PASS
 coverage: 5.0% of statements in ./...
-ok  	goshop/internal/cart/service	7.376s	coverage: 5.0% of statements in ./...
+ok  	goshop/internal/cart/service	4.372s	coverage: 5.0% of statements in ./...
 ?   	goshop/internal/cart/service/mocks	[no test files]
 ?   	goshop/internal/order/dto	[no test files]
 ?   	goshop/internal/order/model	[no test files]
@@ -132,7 +132,7 @@ ok  	goshop/internal/cart/service	7.376s	coverage: 5.0% of statements in ./...
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:11.926+0100	ERROR	http/handlers.go:154	Failed to cancel order, id: orderId1, error: error
+2024-02-03T18:59:49.605+0100	ERROR	http/handlers.go:154	Failed to cancel order, id: orderId1, error: error
     IOrderService.go:143: PASS:	CancelOrder(string,string,string)
 === RUN   TestOrderHandlerTestSuite/TestOrderAPI_CancelOrderMissID
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
@@ -155,14 +155,14 @@ ok  	goshop/internal/cart/service	7.376s	coverage: 5.0% of statements in ./...
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:11.927+0100	ERROR	http/handlers.go:86	Failed to get orders: error
+2024-02-03T18:59:49.606+0100	ERROR	http/handlers.go:86	Failed to get orders: error
     IOrderService.go:143: PASS:	GetMyOrders(string,string)
 === RUN   TestOrderHandlerTestSuite/TestOrderAPI_GetMyOrdersInvalidFieldType
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:11.927+0100	ERROR	http/handlers.go:73	Failed to parse request req: strconv.ParseInt: parsing "q": invalid syntax
+2024-02-03T18:59:49.607+0100	ERROR	http/handlers.go:73	Failed to parse request req: strconv.ParseInt: parsing "q": invalid syntax
 === RUN   TestOrderHandlerTestSuite/TestOrderAPI_GetMyOrdersSuccess
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
@@ -179,7 +179,7 @@ ok  	goshop/internal/cart/service	7.376s	coverage: 5.0% of statements in ./...
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:11.928+0100	ERROR	http/handlers.go:121	Failed to get order, id: orderId1, error: error 
+2024-02-03T18:59:49.608+0100	ERROR	http/handlers.go:121	Failed to get order, id: orderId1, error: error 
     IOrderService.go:143: PASS:	GetOrderByID(string,string)
 === RUN   TestOrderHandlerTestSuite/TestOrderAPI_GetOrderByIDMissID
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
@@ -202,20 +202,20 @@ ok  	goshop/internal/cart/service	7.376s	coverage: 5.0% of statements in ./...
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:11.929+0100	ERROR	http/handlers.go:51	Failed to create OrderHandler: error
+2024-02-03T18:59:49.610+0100	ERROR	http/handlers.go:51	Failed to create OrderHandler: error
     IOrderService.go:143: PASS:	PlaceOrder(string,*dto.PlaceOrderReq)
 === RUN   TestOrderHandlerTestSuite/TestOrderAPI_PlaceOrderInvalidProductIdType
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:11.929+0100	ERROR	http/handlers.go:38	Failed to get bodyjson: cannot unmarshal number into Go struct field PlaceOrderLineReq.lines.product_id of type string
+2024-02-03T18:59:49.610+0100	ERROR	http/handlers.go:38	Failed to get bodyjson: cannot unmarshal number into Go struct field PlaceOrderLineReq.lines.product_id of type string
 === RUN   TestOrderHandlerTestSuite/TestOrderAPI_PlaceOrderInvalidQuantityType
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:11.929+0100	ERROR	http/handlers.go:38	Failed to get bodyjson: cannot unmarshal string into Go struct field PlaceOrderLineReq.lines.quantity of type uint
+2024-02-03T18:59:49.610+0100	ERROR	http/handlers.go:38	Failed to get bodyjson: cannot unmarshal string into Go struct field PlaceOrderLineReq.lines.quantity of type uint
 === RUN   TestOrderHandlerTestSuite/TestOrderAPI_PlaceOrderSuccess
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
@@ -257,7 +257,7 @@ ok  	goshop/internal/cart/service	7.376s	coverage: 5.0% of statements in ./...
 --- PASS: TestRoutes (0.00s)
 PASS
 coverage: 8.7% of statements in ./...
-ok  	goshop/internal/order/port/http	8.219s	coverage: 8.7% of statements in ./...
+ok  	goshop/internal/order/port/http	10.562s	coverage: 8.7% of statements in ./...
 === RUN   TestOrderRepositoryTestSuite
 === RUN   TestOrderRepositoryTestSuite/TestCreateOrderFail
     IDatabase.go:214: PASS:	WithTransaction(string)
@@ -279,7 +279,7 @@ ok  	goshop/internal/order/port/http	8.219s	coverage: 8.7% of statements in ./..
     IDatabase.go:214: PASS:	Update(string,*model.Order)
 === RUN   TestOrderRepositoryTestSuite/TestUpdateOrderSuccessfully
     IDatabase.go:214: PASS:	Update(string,*model.Order)
---- PASS: TestOrderRepositoryTestSuite (0.00s)
+--- PASS: TestOrderRepositoryTestSuite (0.01s)
     --- PASS: TestOrderRepositoryTestSuite/TestCreateOrderFail (0.00s)
     --- PASS: TestOrderRepositoryTestSuite/TestCreateOrderSuccessfully (0.00s)
     --- PASS: TestOrderRepositoryTestSuite/TestGetOrderByIDFail (0.00s)
@@ -299,7 +299,7 @@ ok  	goshop/internal/order/port/http	8.219s	coverage: 8.7% of statements in ./..
     --- PASS: TestProductRepositoryTestSuite/TestGetProductByIDSuccessfully (0.00s)
 PASS
 coverage: 7.1% of statements in ./...
-ok  	goshop/internal/order/repository	4.733s	coverage: 7.1% of statements in ./...
+ok  	goshop/internal/order/repository	1.806s	coverage: 7.1% of statements in ./...
 ?   	goshop/internal/order/repository/mocks	[no test files]
 === RUN   TestOrderServiceTestSuite
 === RUN   TestOrderServiceTestSuite/TestCancelOrderDifferenceUserId
@@ -347,7 +347,7 @@ ok  	goshop/internal/order/repository	4.733s	coverage: 7.1% of statements in ./.
     --- PASS: TestOrderServiceTestSuite/TestPlaceOrderSuccess (0.00s)
 PASS
 coverage: 6.3% of statements in ./...
-ok  	goshop/internal/order/service	3.054s	coverage: 6.3% of statements in ./...
+ok  	goshop/internal/order/service	2.523s	coverage: 6.3% of statements in ./...
 ?   	goshop/internal/order/service/mocks	[no test files]
 ?   	goshop/internal/product/dto	[no test files]
 ?   	goshop/internal/product/model	[no test files]
@@ -357,14 +357,14 @@ ok  	goshop/internal/order/service	3.054s	coverage: 6.3% of statements in ./...
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:14.605+0100	ERROR	http/handlers.go:115	Failed to create producterror
+2024-02-03T18:59:50.577+0100	ERROR	http/handlers.go:115	Failed to create producterror
     IProductService.go:143: PASS:	Create(string,*dto.CreateProductReq)
 === RUN   TestProductHandlerTestSuite/TestCreateProductInvalidPriceType
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:14.606+0100	ERROR	http/handlers.go:108	Failed to get bodyjson: cannot unmarshal string into Go struct field CreateProductReq.price of type float64
+2024-02-03T18:59:50.578+0100	ERROR	http/handlers.go:108	Failed to get bodyjson: cannot unmarshal string into Go struct field CreateProductReq.price of type float64
 === RUN   TestProductHandlerTestSuite/TestCreateProductSuccess
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
@@ -377,7 +377,7 @@ ok  	goshop/internal/order/service	3.054s	coverage: 6.3% of statements in ./...
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:14.606+0100	ERROR	http/handlers.go:51	Failed to get product detail: error
+2024-02-03T18:59:50.578+0100	ERROR	http/handlers.go:51	Failed to get product detail: error
     IRedis.go:141: PASS:	Get(string,*dto.Product)
     IProductService.go:143: PASS:	GetProductByID(string,string)
 === RUN   TestProductHandlerTestSuite/TestGetProductByIDSuccessfullyFromCache
@@ -399,7 +399,7 @@ ok  	goshop/internal/order/service	3.054s	coverage: 6.3% of statements in ./...
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:14.607+0100	ERROR	http/handlers.go:86	Failed to get list products: error
+2024-02-03T18:59:50.579+0100	ERROR	http/handlers.go:86	Failed to get list products: error
     IRedis.go:141: PASS:	Get(string,*dto.ListProductRes)
     IProductService.go:143: PASS:	ListProducts(string,string)
 === RUN   TestProductHandlerTestSuite/TestListProductsInvalidQuery
@@ -407,7 +407,7 @@ ok  	goshop/internal/order/service	3.054s	coverage: 6.3% of statements in ./...
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:14.607+0100	ERROR	http/handlers.go:71	Failed to parse request query: strconv.ParseInt: parsing "a": invalid syntax
+2024-02-03T18:59:50.579+0100	ERROR	http/handlers.go:71	Failed to parse request query: strconv.ParseInt: parsing "a": invalid syntax
 === RUN   TestProductHandlerTestSuite/TestListProductsSuccessfullyFromCache
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
@@ -427,14 +427,14 @@ ok  	goshop/internal/order/service	3.054s	coverage: 6.3% of statements in ./...
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:14.609+0100	ERROR	http/handlers.go:146	Failed to update producterror
+2024-02-03T18:59:50.581+0100	ERROR	http/handlers.go:146	Failed to update producterror
     IProductService.go:143: PASS:	Update(string,string,*dto.UpdateProductReq)
 === RUN   TestProductHandlerTestSuite/TestUpdateProductInvalidPriceType
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:14.610+0100	ERROR	http/handlers.go:139	Failed to get bodyjson: cannot unmarshal string into Go struct field UpdateProductReq.price of type float64
+2024-02-03T18:59:50.582+0100	ERROR	http/handlers.go:139	Failed to get bodyjson: cannot unmarshal string into Go struct field UpdateProductReq.price of type float64
 === RUN   TestProductHandlerTestSuite/TestUpdateProductSuccess
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
@@ -468,7 +468,7 @@ ok  	goshop/internal/order/service	3.054s	coverage: 6.3% of statements in ./...
 --- PASS: TestRoutes (0.00s)
 PASS
 coverage: 9.2% of statements in ./...
-ok  	goshop/internal/product/port/http	10.735s	coverage: 9.2% of statements in ./...
+ok  	goshop/internal/product/port/http	11.532s	coverage: 9.2% of statements in ./...
 === RUN   TestProductRepositoryTestSuite
 === RUN   TestProductRepositoryTestSuite/TestCreateProductFail
     IDatabase.go:214: PASS:	Create(string,*model.Product)
@@ -490,7 +490,7 @@ ok  	goshop/internal/product/port/http	10.735s	coverage: 9.2% of statements in .
     IDatabase.go:214: PASS:	Update(string,*model.Product)
 === RUN   TestProductRepositoryTestSuite/TestUpdateProductSuccessfully
     IDatabase.go:214: PASS:	Update(string,*model.Product)
---- PASS: TestProductRepositoryTestSuite (0.00s)
+--- PASS: TestProductRepositoryTestSuite (0.01s)
     --- PASS: TestProductRepositoryTestSuite/TestCreateProductFail (0.00s)
     --- PASS: TestProductRepositoryTestSuite/TestCreateProductSuccessfully (0.00s)
     --- PASS: TestProductRepositoryTestSuite/TestGetProductByIDFail (0.00s)
@@ -502,11 +502,11 @@ ok  	goshop/internal/product/port/http	10.735s	coverage: 9.2% of statements in .
     --- PASS: TestProductRepositoryTestSuite/TestUpdateProductSuccessfully (0.00s)
 PASS
 coverage: 5.8% of statements in ./...
-ok  	goshop/internal/product/repository	5.696s	coverage: 5.8% of statements in ./...
+ok  	goshop/internal/product/repository	6.315s	coverage: 5.8% of statements in ./...
 ?   	goshop/internal/product/repository/mocks	[no test files]
 === RUN   TestProductServiceTestSuite
 === RUN   TestProductServiceTestSuite/TestCreateFail
-2024-02-03T17:53:12.797+0100	ERROR	service/product.go:67	Create fail, error: error
+2024-02-03T18:59:47.823+0100	ERROR	service/product.go:67	Create fail, error: error
     IProductRepository.go:119: PASS:	Create(string,*model.Product)
 === RUN   TestProductServiceTestSuite/TestCreateMissProductName
 === RUN   TestProductServiceTestSuite/TestCreateSuccess
@@ -520,11 +520,11 @@ ok  	goshop/internal/product/repository	5.696s	coverage: 5.8% of statements in .
 === RUN   TestProductServiceTestSuite/TestListProductsSuccess
     IProductRepository.go:119: PASS:	ListProducts(string,*dto.ListProductReq)
 === RUN   TestProductServiceTestSuite/TestUpdateFail
-2024-02-03T17:53:12.800+0100	ERROR	service/product.go:88	Update fail, id: productID, error: error
+2024-02-03T18:59:47.826+0100	ERROR	service/product.go:88	Update fail, id: productID, error: error
     IProductRepository.go:119: PASS:	GetProductByID(string,string)
     IProductRepository.go:119: PASS:	Update(string,*model.Product)
 === RUN   TestProductServiceTestSuite/TestUpdateGetProductByIDFail
-2024-02-03T17:53:12.800+0100	ERROR	service/product.go:81	Update.GetUserByID fail, id: productID, error: error
+2024-02-03T18:59:47.826+0100	ERROR	service/product.go:81	Update.GetUserByID fail, id: productID, error: error
     IProductRepository.go:119: PASS:	GetProductByID(string,string)
 === RUN   TestProductServiceTestSuite/TestUpdateInvalidPrice
 === RUN   TestProductServiceTestSuite/TestUpdateSuccess
@@ -544,13 +544,13 @@ ok  	goshop/internal/product/repository	5.696s	coverage: 5.8% of statements in .
     --- PASS: TestProductServiceTestSuite/TestUpdateSuccess (0.00s)
 PASS
 coverage: 5.1% of statements in ./...
-ok  	goshop/internal/product/service	9.089s	coverage: 5.1% of statements in ./...
+ok  	goshop/internal/product/service	9.016s	coverage: 5.1% of statements in ./...
 ?   	goshop/internal/product/service/mocks	[no test files]
 === RUN   TestNewServer
 --- PASS: TestNewServer (0.00s)
 PASS
 coverage: 2.6% of statements in ./...
-ok  	goshop/internal/server/grpc	3.864s	coverage: 2.6% of statements in ./...
+ok  	goshop/internal/server/grpc	5.448s	coverage: 2.6% of statements in ./...
 === RUN   TestNewServer
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
 
@@ -590,35 +590,35 @@ ok  	goshop/internal/server/grpc	3.864s	coverage: 2.6% of statements in ./...
 --- PASS: TestServer_MapRoutes (0.00s)
 PASS
 coverage: 4.8% of statements in ./...
-ok  	goshop/internal/server/http	9.957s	coverage: 4.8% of statements in ./...
+ok  	goshop/internal/server/http	8.142s	coverage: 4.8% of statements in ./...
 ?   	goshop/internal/user/dto	[no test files]
 ?   	goshop/internal/user/model	[no test files]
 === RUN   TestUserHandlerTestSuite
 === RUN   TestUserHandlerTestSuite/TestUserAPI_ChangePasswordFail
-2024-02-03T17:53:10.180+0100	ERROR	grpc/handlers.go:105	Failed to register error
+2024-02-03T18:59:48.694+0100	ERROR	grpc/handlers.go:105	Failed to register error
     IUserService.go:158: PASS:	ChangePassword(string,string,*dto.ChangePasswordReq)
 === RUN   TestUserHandlerTestSuite/TestUserAPI_ChangePasswordSuccess
     IUserService.go:158: PASS:	ChangePassword(string,string,*dto.ChangePasswordReq)
 === RUN   TestUserHandlerTestSuite/TestUserAPI_ChangePasswordUnauthorized
 === RUN   TestUserHandlerTestSuite/TestUserAPI_GetMeFail
-2024-02-03T17:53:10.180+0100	ERROR	grpc/handlers.go:67	Failed to register error
+2024-02-03T18:59:48.695+0100	ERROR	grpc/handlers.go:67	Failed to register error
     IUserService.go:158: PASS:	GetUserByID(string,string)
 === RUN   TestUserHandlerTestSuite/TestUserAPI_GetMeSuccess
     IUserService.go:158: PASS:	GetUserByID(string,string)
 === RUN   TestUserHandlerTestSuite/TestUserAPI_GetMeUnauthorized
 === RUN   TestUserHandlerTestSuite/TestUserAPI_LoginFail
-2024-02-03T17:53:10.181+0100	ERROR	grpc/handlers.go:33	Failed to register error
+2024-02-03T18:59:48.695+0100	ERROR	grpc/handlers.go:33	Failed to register error
     IUserService.go:158: PASS:	Login(string,*dto.LoginReq)
 === RUN   TestUserHandlerTestSuite/TestUserAPI_LoginSuccess
     IUserService.go:158: PASS:	Login(string,*dto.LoginReq)
 === RUN   TestUserHandlerTestSuite/TestUserAPI_RefreshTokenFail
-2024-02-03T17:53:10.181+0100	ERROR	grpc/handlers.go:84	Failed to register error
+2024-02-03T18:59:48.695+0100	ERROR	grpc/handlers.go:84	Failed to register error
     IUserService.go:158: PASS:	RefreshToken(string,string)
 === RUN   TestUserHandlerTestSuite/TestUserAPI_RefreshTokenSuccess
     IUserService.go:158: PASS:	RefreshToken(string,string)
 === RUN   TestUserHandlerTestSuite/TestUserAPI_RefreshTokenUnauthorized
 === RUN   TestUserHandlerTestSuite/TestUserAPI_RegisterFail
-2024-02-03T17:53:10.181+0100	ERROR	grpc/handlers.go:50	Failed to register error
+2024-02-03T18:59:48.696+0100	ERROR	grpc/handlers.go:50	Failed to register error
     IUserService.go:158: PASS:	Register(string,*dto.RegisterReq)
 === RUN   TestUserHandlerTestSuite/TestUserAPI_RegisterSuccess
     IUserService.go:158: PASS:	Register(string,*dto.RegisterReq)
@@ -640,21 +640,21 @@ ok  	goshop/internal/server/http	9.957s	coverage: 4.8% of statements in ./...
 --- PASS: TestRegisterHandlers (0.00s)
 PASS
 coverage: 7.0% of statements in ./...
-ok  	goshop/internal/user/port/grpc	6.548s	coverage: 7.0% of statements in ./...
+ok  	goshop/internal/user/port/grpc	9.675s	coverage: 7.0% of statements in ./...
 === RUN   TestUserHandlerTestSuite
 === RUN   TestUserHandlerTestSuite/TestChangePasswordFail
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:15.548+0100	ERROR	http/handlers.go:150	error
+2024-02-03T18:59:51.488+0100	ERROR	http/handlers.go:150	error
     IUserService.go:158: PASS:	ChangePassword(string,string,*dto.ChangePasswordReq)
 === RUN   TestUserHandlerTestSuite/TestChangePasswordInvalidPasswordType
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:15.549+0100	ERROR	http/handlers.go:142	Failed to get bodyjson: cannot unmarshal number into Go struct field ChangePasswordReq.new_password of type string
+2024-02-03T18:59:51.489+0100	ERROR	http/handlers.go:142	Failed to get bodyjson: cannot unmarshal number into Go struct field ChangePasswordReq.new_password of type string
 === RUN   TestUserHandlerTestSuite/TestChangePasswordSuccess
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
@@ -666,7 +666,7 @@ ok  	goshop/internal/user/port/grpc	6.548s	coverage: 7.0% of statements in ./...
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:15.549+0100	ERROR	http/handlers.go:101	error
+2024-02-03T18:59:51.489+0100	ERROR	http/handlers.go:101	error
     IUserService.go:158: PASS:	GetUserByID(string,string)
 === RUN   TestUserHandlerTestSuite/TestGetMeSuccess
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
@@ -684,20 +684,20 @@ ok  	goshop/internal/user/port/grpc	6.548s	coverage: 7.0% of statements in ./...
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:15.550+0100	ERROR	http/handlers.go:44	Failed to login error
+2024-02-03T18:59:51.490+0100	ERROR	http/handlers.go:44	Failed to login error
     IUserService.go:158: PASS:	Login(string,*dto.LoginReq)
 === RUN   TestUserHandlerTestSuite/TestLoginInvalidEmailType
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:15.550+0100	ERROR	http/handlers.go:37	Failed to get body json: cannot unmarshal number into Go struct field LoginReq.email of type string
+2024-02-03T18:59:51.490+0100	ERROR	http/handlers.go:37	Failed to get body json: cannot unmarshal number into Go struct field LoginReq.email of type string
 === RUN   TestUserHandlerTestSuite/TestLoginInvalidPasswordType
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:15.550+0100	ERROR	http/handlers.go:37	Failed to get body json: cannot unmarshal number into Go struct field LoginReq.password of type string
+2024-02-03T18:59:51.490+0100	ERROR	http/handlers.go:37	Failed to get body json: cannot unmarshal number into Go struct field LoginReq.password of type string
 === RUN   TestUserHandlerTestSuite/TestLoginSuccess
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
@@ -709,7 +709,7 @@ ok  	goshop/internal/user/port/grpc	6.548s	coverage: 7.0% of statements in ./...
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:15.552+0100	ERROR	http/handlers.go:120	Failed to refresh tokenerror
+2024-02-03T18:59:51.490+0100	ERROR	http/handlers.go:120	Failed to refresh tokenerror
     IUserService.go:158: PASS:	RefreshToken(string,string)
 === RUN   TestUserHandlerTestSuite/TestRefreshTokenSuccess
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
@@ -727,27 +727,27 @@ ok  	goshop/internal/user/port/grpc	6.548s	coverage: 7.0% of statements in ./...
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:15.554+0100	ERROR	http/handlers.go:74	error
+2024-02-03T18:59:51.491+0100	ERROR	http/handlers.go:74	error
     IUserService.go:158: PASS:	Register(string,*dto.RegisterReq)
 === RUN   TestUserHandlerTestSuite/TestRegisterInvalidEmailType
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:15.554+0100	ERROR	http/handlers.go:67	Failed to get bodyjson: cannot unmarshal number into Go struct field RegisterReq.email of type string
+2024-02-03T18:59:51.491+0100	ERROR	http/handlers.go:67	Failed to get bodyjson: cannot unmarshal number into Go struct field RegisterReq.email of type string
 === RUN   TestUserHandlerTestSuite/TestRegisterInvalidPasswordType
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-2024-02-03T17:53:15.555+0100	ERROR	http/handlers.go:67	Failed to get bodyjson: cannot unmarshal number into Go struct field RegisterReq.password of type string
+2024-02-03T18:59:51.491+0100	ERROR	http/handlers.go:67	Failed to get bodyjson: cannot unmarshal number into Go struct field RegisterReq.password of type string
 === RUN   TestUserHandlerTestSuite/TestRegisterSuccess
 [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
     IUserService.go:158: PASS:	Register(string,*dto.RegisterReq)
---- PASS: TestUserHandlerTestSuite (0.01s)
+--- PASS: TestUserHandlerTestSuite (0.00s)
     --- PASS: TestUserHandlerTestSuite/TestChangePasswordFail (0.00s)
     --- PASS: TestUserHandlerTestSuite/TestChangePasswordInvalidPasswordType (0.00s)
     --- PASS: TestUserHandlerTestSuite/TestChangePasswordSuccess (0.00s)
@@ -778,7 +778,7 @@ ok  	goshop/internal/user/port/grpc	6.548s	coverage: 7.0% of statements in ./...
 --- PASS: TestRoutes (0.00s)
 PASS
 coverage: 8.7% of statements in ./...
-ok  	goshop/internal/user/port/http	9.300s	coverage: 8.7% of statements in ./...
+ok  	goshop/internal/user/port/http	9.586s	coverage: 8.7% of statements in ./...
 === RUN   TestUserRepositoryTestSuite
 === RUN   TestUserRepositoryTestSuite/TestCreateUserFail
     IDatabase.go:214: PASS:	Create(string,*model.User)
@@ -807,29 +807,29 @@ ok  	goshop/internal/user/port/http	9.300s	coverage: 8.7% of statements in ./...
     --- PASS: TestUserRepositoryTestSuite/TestUpdateUserSuccessfully (0.00s)
 PASS
 coverage: 3.9% of statements in ./...
-ok  	goshop/internal/user/repository	9.374s	coverage: 3.9% of statements in ./...
+ok  	goshop/internal/user/repository	9.664s	coverage: 3.9% of statements in ./...
 ?   	goshop/internal/user/repository/mocks	[no test files]
 === RUN   TestUserServiceTestSuite
 === RUN   TestUserServiceTestSuite/TestChangePasswordGetUserByIDFail
-2024-02-03T17:53:17.608+0100	ERROR	service/user.go:113	ChangePassword.GetUserByID fail, id: userID, error: error
+2024-02-03T18:59:53.190+0100	ERROR	service/user.go:113	ChangePassword.GetUserByID fail, id: userID, error: error
     IUserRepository.go:106: PASS:	GetUserByID(string,string)
 === RUN   TestUserServiceTestSuite/TestChangePasswordMissRequiredField
 === RUN   TestUserServiceTestSuite/TestChangePasswordSuccess
     IUserRepository.go:106: PASS:	GetUserByID(string,string)
     IUserRepository.go:106: PASS:	Update(string,string)
 === RUN   TestUserServiceTestSuite/TestChangePasswordUpdateUserFail
-2024-02-03T17:53:17.621+0100	ERROR	service/user.go:124	ChangePassword.Update fail, id: userID, error: error
+2024-02-03T18:59:53.200+0100	ERROR	service/user.go:124	ChangePassword.Update fail, id: userID, error: error
     IUserRepository.go:106: PASS:	GetUserByID(string,string)
     IUserRepository.go:106: PASS:	Update(string,string)
 === RUN   TestUserServiceTestSuite/TestChangePasswordWrongCurrentPassword
     IUserRepository.go:106: PASS:	GetUserByID(string,string)
 === RUN   TestUserServiceTestSuite/TestGetUserByIDFail
-2024-02-03T17:53:17.625+0100	ERROR	service/user.go:84	GetUserByID fail, id: userID, error: error
+2024-02-03T18:59:53.203+0100	ERROR	service/user.go:84	GetUserByID fail, id: userID, error: error
     IUserRepository.go:106: PASS:	GetUserByID(string,string)
 === RUN   TestUserServiceTestSuite/TestGetUserByIDSuccess
     IUserRepository.go:106: PASS:	GetUserByID(string,string)
 === RUN   TestUserServiceTestSuite/TestLoginGetUserByEmailFail
-2024-02-03T17:53:17.626+0100	ERROR	service/user.go:48	Login.GetUserByEmail fail, email: test@test.com, error: error
+2024-02-03T18:59:53.204+0100	ERROR	service/user.go:48	Login.GetUserByEmail fail, email: test@test.com, error: error
     IUserRepository.go:106: PASS:	GetUserByEmail(string,string)
 === RUN   TestUserServiceTestSuite/TestLoginInvalidEmailFormat
 === RUN   TestUserServiceTestSuite/TestLoginSuccess
@@ -837,21 +837,21 @@ ok  	goshop/internal/user/repository	9.374s	coverage: 3.9% of statements in ./..
 === RUN   TestUserServiceTestSuite/TestLoginWrongPassword
     IUserRepository.go:106: PASS:	GetUserByEmail(string,string)
 === RUN   TestUserServiceTestSuite/TestRefreshTokenGetUserByIDFail
-2024-02-03T17:53:17.630+0100	ERROR	service/user.go:94	RefreshToken.GetUserByID fail, id: userID, error: error
+2024-02-03T18:59:53.208+0100	ERROR	service/user.go:94	RefreshToken.GetUserByID fail, id: userID, error: error
     IUserRepository.go:106: PASS:	GetUserByID(string,string)
 === RUN   TestUserServiceTestSuite/TestRefreshTokenSuccess
     IUserRepository.go:106: PASS:	GetUserByID(string,string)
 === RUN   TestUserServiceTestSuite/TestRegisterCreateUserFail
-2024-02-03T17:53:17.630+0100	ERROR	service/user.go:75	Register.Create fail, email: test@test.com, error: error
+2024-02-03T18:59:53.209+0100	ERROR	service/user.go:75	Register.Create fail, email: test@test.com, error: error
     IUserRepository.go:106: PASS:	Create(string,string)
 === RUN   TestUserServiceTestSuite/TestRegisterInvalidEmailFormat
 === RUN   TestUserServiceTestSuite/TestRegisterSuccess
     IUserRepository.go:106: PASS:	Create(string,string)
---- PASS: TestUserServiceTestSuite (0.03s)
+--- PASS: TestUserServiceTestSuite (0.02s)
     --- PASS: TestUserServiceTestSuite/TestChangePasswordGetUserByIDFail (0.00s)
     --- PASS: TestUserServiceTestSuite/TestChangePasswordMissRequiredField (0.00s)
-    --- PASS: TestUserServiceTestSuite/TestChangePasswordSuccess (0.01s)
-    --- PASS: TestUserServiceTestSuite/TestChangePasswordUpdateUserFail (0.01s)
+    --- PASS: TestUserServiceTestSuite/TestChangePasswordSuccess (0.00s)
+    --- PASS: TestUserServiceTestSuite/TestChangePasswordUpdateUserFail (0.00s)
     --- PASS: TestUserServiceTestSuite/TestChangePasswordWrongCurrentPassword (0.00s)
     --- PASS: TestUserServiceTestSuite/TestGetUserByIDFail (0.00s)
     --- PASS: TestUserServiceTestSuite/TestGetUserByIDSuccess (0.00s)
@@ -866,7 +866,7 @@ ok  	goshop/internal/user/repository	9.374s	coverage: 3.9% of statements in ./..
     --- PASS: TestUserServiceTestSuite/TestRegisterSuccess (0.00s)
 PASS
 coverage: 6.5% of statements in ./...
-ok  	goshop/internal/user/service	9.695s	coverage: 6.5% of statements in ./...
+ok  	goshop/internal/user/service	9.429s	coverage: 6.5% of statements in ./...
 ?   	goshop/internal/user/service/mocks	[no test files]
 ?   	goshop/pkg/config	[no test files]
 ?   	goshop/pkg/dbs	[no test files]
@@ -880,345 +880,345 @@ ok  	goshop/internal/user/service	9.695s	coverage: 6.5% of statements in ./...
 === RUN   TestHashAndSalt
 === RUN   TestHashAndSalt/hash_successfully
 === RUN   TestHashAndSalt/hash_too_long
-2024/02/03 17:53:18 Failed to generate password: bcrypt: password length exceeds 72 bytes
+2024/02/03 18:59:53 Failed to generate password: bcrypt: password length exceeds 72 bytes
 --- PASS: TestHashAndSalt (0.00s)
     --- PASS: TestHashAndSalt/hash_successfully (0.00s)
     --- PASS: TestHashAndSalt/hash_too_long (0.00s)
 PASS
 coverage: 2.1% of statements in ./...
-ok  	goshop/pkg/utils	9.635s	coverage: 2.1% of statements in ./...
+ok  	goshop/pkg/utils	9.234s	coverage: 2.1% of statements in ./...
 ?   	goshop/proto/gen/go/cart	[no test files]
 ?   	goshop/proto/gen/go/user	[no test files]
 === RUN   TestOrderAPI_PlaceOrderSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    2.415952ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |    42.23697ms |                 | POST     "/api/v1/orders"
---- PASS: TestOrderAPI_PlaceOrderSuccess (0.05s)
+[GIN] 2024/02/03 - 18:59:55 | 200 |    2.349249ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |   36.951275ms |                 | POST     "/api/v1/orders"
+--- PASS: TestOrderAPI_PlaceOrderSuccess (0.04s)
 === RUN   TestOrderAPI_PlaceOrderInvalidFieldType
-[GIN] 2024/02/03 - 17:53:19 | 200 |    2.200249ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.547+0100	ERROR	http/handlers.go:38	Failed to get bodyjson: cannot unmarshal string into Go struct field PlaceOrderLineReq.lines.quantity of type uint
-[GIN] 2024/02/03 - 17:53:19 | 400 |     148.315µs |                 | POST     "/api/v1/orders"
---- PASS: TestOrderAPI_PlaceOrderInvalidFieldType (0.01s)
+[GIN] 2024/02/03 - 18:59:55 | 200 |      1.7926ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.270+0100	ERROR	http/handlers.go:38	Failed to get bodyjson: cannot unmarshal string into Go struct field PlaceOrderLineReq.lines.quantity of type uint
+[GIN] 2024/02/03 - 18:59:55 | 400 |      141.97µs |                 | POST     "/api/v1/orders"
+--- PASS: TestOrderAPI_PlaceOrderInvalidFieldType (0.00s)
 === RUN   TestOrderAPI_PlaceOrderInvalidMissProductID
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.774202ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.553+0100	ERROR	http/handlers.go:51	Failed to create OrderHandler: product_id is a required field
-[GIN] 2024/02/03 - 17:53:19 | 500 |     125.334µs |                 | POST     "/api/v1/orders"
---- PASS: TestOrderAPI_PlaceOrderInvalidMissProductID (0.01s)
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.719785ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.274+0100	ERROR	http/handlers.go:51	Failed to create OrderHandler: product_id is a required field
+[GIN] 2024/02/03 - 18:59:55 | 500 |      92.586µs |                 | POST     "/api/v1/orders"
+--- PASS: TestOrderAPI_PlaceOrderInvalidMissProductID (0.00s)
 === RUN   TestOrderAPI_PlaceOrderInvalidMissQuantity
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.785602ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.558+0100	ERROR	http/handlers.go:51	Failed to create OrderHandler: quantity is a required field
-[GIN] 2024/02/03 - 17:53:19 | 500 |      87.873µs |                 | POST     "/api/v1/orders"
---- PASS: TestOrderAPI_PlaceOrderInvalidMissQuantity (0.01s)
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.706541ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.279+0100	ERROR	http/handlers.go:51	Failed to create OrderHandler: quantity is a required field
+[GIN] 2024/02/03 - 18:59:55 | 500 |      79.042µs |                 | POST     "/api/v1/orders"
+--- PASS: TestOrderAPI_PlaceOrderInvalidMissQuantity (0.00s)
 === RUN   TestOrderAPI_PlaceOrderInvalidProductNotFound
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.714655ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    2.005091ms |                 | POST     "/api/v1/auth/login"
 
-2024/02/03 17:53:19 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:126 [35;1mrecord not found
-[0m[33m[0.205ms] [34;1m[rows:0][0m SELECT * FROM "products" WHERE id = 'notfound'  ORDER BY "products"."id" LIMIT 1
-2024-02-03T17:53:19.563+0100	ERROR	http/handlers.go:51	Failed to create OrderHandler: record not found
-[GIN] 2024/02/03 - 17:53:19 | 500 |     624.297µs |                 | POST     "/api/v1/orders"
+2024/02/03 18:59:55 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:126 [35;1mrecord not found
+[0m[33m[0.249ms] [34;1m[rows:0][0m SELECT * FROM "products" WHERE id = 'notfound'  ORDER BY "products"."id" LIMIT 1
+2024-02-03T18:59:55.285+0100	ERROR	http/handlers.go:51	Failed to create OrderHandler: record not found
+[GIN] 2024/02/03 - 18:59:55 | 500 |     768.865µs |                 | POST     "/api/v1/orders"
 --- PASS: TestOrderAPI_PlaceOrderInvalidProductNotFound (0.01s)
 === RUN   TestOrderAPI_PlaceOrderUnauthorized
-[GIN] 2024/02/03 - 17:53:19 | 401 |       16.03µs |                 | POST     "/api/v1/orders"
+[GIN] 2024/02/03 - 18:59:55 | 401 |       3.751µs |                 | POST     "/api/v1/orders"
 --- PASS: TestOrderAPI_PlaceOrderUnauthorized (0.00s)
 === RUN   TestOrderAPI_GetOrderByIDSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.829012ms |                 | GET      "/api/v1/orders/f1587c3e-ecf3-4fc2-a3ab-b1e7a4d4a8a4"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.340596ms |                 | GET      "/api/v1/orders/94e99294-48c3-4602-b05f-d31203b0d4cd"
 --- PASS: TestOrderAPI_GetOrderByIDSuccess (0.01s)
 === RUN   TestOrderAPI_GetOrderByIDNotFound
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.844697ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.738915ms |                 | POST     "/api/v1/auth/login"
 
-2024/02/03 17:53:19 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:138 [35;1mrecord not found
-[0m[33m[0.298ms] [34;1m[rows:0][0m SELECT * FROM "orders" WHERE id = ('notfound') ORDER BY id,"orders"."id" LIMIT 1
-2024-02-03T17:53:19.583+0100	ERROR	http/handlers.go:121	Failed to get order, id: notfound, error: record not found 
-[GIN] 2024/02/03 - 17:53:19 | 404 |     436.248µs |                 | GET      "/api/v1/orders/notfound"
+2024/02/03 18:59:55 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:138 [35;1mrecord not found
+[0m[33m[0.218ms] [34;1m[rows:0][0m SELECT * FROM "orders" WHERE id = ('notfound') ORDER BY id,"orders"."id" LIMIT 1
+2024-02-03T18:59:55.300+0100	ERROR	http/handlers.go:121	Failed to get order, id: notfound, error: record not found 
+[GIN] 2024/02/03 - 18:59:55 | 404 |     349.145µs |                 | GET      "/api/v1/orders/notfound"
 --- PASS: TestOrderAPI_GetOrderByIDNotFound (0.00s)
 === RUN   TestOrderAPI_CancelOrderSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.460713ms |                 | PUT      "/api/v1/orders/77a21136-c625-4f5f-9fa1-2b7e5be8e9fe/cancel"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.068778ms |                 | PUT      "/api/v1/orders/24752365-e571-49c4-977b-87d733926a2a/cancel"
 --- PASS: TestOrderAPI_CancelOrderSuccess (0.01s)
 === RUN   TestOrderAPI_CancelOrderNotFound
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.713832ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.641856ms |                 | POST     "/api/v1/auth/login"
 
-2024/02/03 17:53:19 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:138 [35;1mrecord not found
-[0m[33m[0.258ms] [34;1m[rows:0][0m SELECT * FROM "orders" WHERE id = ('notfound') ORDER BY id,"orders"."id" LIMIT 1
-2024-02-03T17:53:19.595+0100	ERROR	http/handlers.go:154	Failed to cancel order, id: notfound, error: record not found
-[GIN] 2024/02/03 - 17:53:19 | 500 |     390.739µs |                 | PUT      "/api/v1/orders/notfound/cancel"
+2024/02/03 18:59:55 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:138 [35;1mrecord not found
+[0m[33m[0.230ms] [34;1m[rows:0][0m SELECT * FROM "orders" WHERE id = ('notfound') ORDER BY id,"orders"."id" LIMIT 1
+2024-02-03T18:59:55.310+0100	ERROR	http/handlers.go:154	Failed to cancel order, id: notfound, error: record not found
+[GIN] 2024/02/03 - 18:59:55 | 500 |      333.04µs |                 | PUT      "/api/v1/orders/notfound/cancel"
 --- PASS: TestOrderAPI_CancelOrderNotFound (0.00s)
 === RUN   TestOrderAPI_CancelOrderStatusDone
-2024-02-03T17:53:19.601+0100	ERROR	http/handlers.go:154	Failed to cancel order, id: 672fd0d6-91f2-4ca8-9e09-04350eef16ca, error: invalid order status
-[GIN] 2024/02/03 - 17:53:19 | 500 |     365.488µs |                 | PUT      "/api/v1/orders/672fd0d6-91f2-4ca8-9e09-04350eef16ca/cancel"
+2024-02-03T18:59:55.315+0100	ERROR	http/handlers.go:154	Failed to cancel order, id: 50c7fabb-6a3a-4da6-8a33-f06d8d933767, error: invalid order status
+[GIN] 2024/02/03 - 18:59:55 | 500 |     310.236µs |                 | PUT      "/api/v1/orders/50c7fabb-6a3a-4da6-8a33-f06d8d933767/cancel"
 --- PASS: TestOrderAPI_CancelOrderStatusDone (0.01s)
 === RUN   TestOrderAPI_CancelOrderStatusCancelled
-2024-02-03T17:53:19.608+0100	ERROR	http/handlers.go:154	Failed to cancel order, id: 1b339fa2-579c-4a39-b9f6-3b619dc499fb, error: invalid order status
-[GIN] 2024/02/03 - 17:53:19 | 500 |     326.358µs |                 | PUT      "/api/v1/orders/1b339fa2-579c-4a39-b9f6-3b619dc499fb/cancel"
+2024-02-03T18:59:55.322+0100	ERROR	http/handlers.go:154	Failed to cancel order, id: 757c6f6c-136d-4e93-8053-a194fd71e9fb, error: invalid order status
+[GIN] 2024/02/03 - 18:59:55 | 500 |      320.98µs |                 | PUT      "/api/v1/orders/757c6f6c-136d-4e93-8053-a194fd71e9fb/cancel"
 --- PASS: TestOrderAPI_CancelOrderStatusCancelled (0.01s)
 === RUN   TestOrderAPI_CancelOrderNotMine
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.657024ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.617+0100	ERROR	http/handlers.go:154	Failed to cancel order, id: cbde8e5a-ebdc-4225-b78e-b0b735a5f8e0, error: permission denied
-[GIN] 2024/02/03 - 17:53:19 | 500 |     364.249µs |                 | PUT      "/api/v1/orders/cbde8e5a-ebdc-4225-b78e-b0b735a5f8e0/cancel"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.619381ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.331+0100	ERROR	http/handlers.go:154	Failed to cancel order, id: 024298f7-52a6-4ebc-97fc-602fc73bc7dd, error: permission denied
+[GIN] 2024/02/03 - 18:59:55 | 500 |     311.434µs |                 | PUT      "/api/v1/orders/024298f7-52a6-4ebc-97fc-602fc73bc7dd/cancel"
 --- PASS: TestOrderAPI_CancelOrderNotMine (0.01s)
 === RUN   TestOrderAPI_ListOrdersSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    2.257667ms |                 | GET      "/api/v1/orders"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.853279ms |                 | GET      "/api/v1/orders"
 --- PASS: TestOrderAPI_ListOrdersSuccess (0.01s)
 === RUN   TestOrderAPI_ListOrdersNotFound
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.714047ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |     577.578µs |                 | GET      "/api/v1/orders"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.639208ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |      521.43µs |                 | GET      "/api/v1/orders"
 --- PASS: TestOrderAPI_ListOrdersNotFound (0.00s)
 === RUN   TestOrderAPI_ListOrdersInvalidFieldType
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.684509ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.639+0100	ERROR	http/handlers.go:73	Failed to parse request req: strconv.ParseInt: parsing "a": invalid syntax
-[GIN] 2024/02/03 - 17:53:19 | 400 |      78.031µs |                 | GET      "/api/v1/orders?page=a"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.658208ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.348+0100	ERROR	http/handlers.go:73	Failed to parse request req: strconv.ParseInt: parsing "a": invalid syntax
+[GIN] 2024/02/03 - 18:59:55 | 400 |      76.453µs |                 | GET      "/api/v1/orders?page=a"
 --- PASS: TestOrderAPI_ListOrdersInvalidFieldType (0.00s)
 === RUN   TestOrderAPI_ListMyOrdersFindByStatusSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |     1.49432ms |                 | GET      "/api/v1/orders?status=new"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.437344ms |                 | GET      "/api/v1/orders?status=new"
 --- PASS: TestOrderAPI_ListMyOrdersFindByStatusSuccess (0.01s)
 === RUN   TestOrderAPI_ListOrdersFindByStatusNotFound
-[GIN] 2024/02/03 - 17:53:19 | 200 |     520.889µs |                 | GET      "/api/v1/orders?status=cancelled"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     525.426µs |                 | GET      "/api/v1/orders?status=cancelled"
 --- PASS: TestOrderAPI_ListOrdersFindByStatusNotFound (0.01s)
 === RUN   TestOrderAPI_ListOrdersFindByCodeSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.331088ms |                 | GET      "/api/v1/orders?code=SO240203A0XDE"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.305845ms |                 | GET      "/api/v1/orders?code=SO24020364NCD"
 --- PASS: TestOrderAPI_ListOrdersFindByCodeSuccess (0.01s)
 === RUN   TestOrderAPI_ListOrdersFindByCodeNotFound
-[GIN] 2024/02/03 - 17:53:19 | 200 |     576.003µs |                 | GET      "/api/v1/orders?code=notfound"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     515.858µs |                 | GET      "/api/v1/orders?code=notfound"
 --- PASS: TestOrderAPI_ListOrdersFindByCodeNotFound (0.01s)
 === RUN   TestOrderAPI_ListOrdersWithPagination
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.242485ms |                 | GET      "/api/v1/orders?page=2&limit=1"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.169474ms |                 | GET      "/api/v1/orders?page=2&limit=1"
 --- PASS: TestOrderAPI_ListOrdersWithPagination (0.01s)
 === RUN   TestOrderAPI_ListOrdersWithOrder
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.293138ms |                 | GET      "/api/v1/orders?order_by=created_at&order_desc=true"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.291121ms |                 | GET      "/api/v1/orders?order_by=created_at&order_desc=true"
 --- PASS: TestOrderAPI_ListOrdersWithOrder (0.01s)
 === RUN   TestOrderAPI_GetMyOrdersNotMine
-[GIN] 2024/02/03 - 17:53:19 | 200 |     1.83377ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |     621.471µs |                 | GET      "/api/v1/orders?code=notfound"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.617214ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     546.638µs |                 | GET      "/api/v1/orders?code=notfound"
 --- PASS: TestOrderAPI_GetMyOrdersNotMine (0.01s)
 === RUN   TestProductAPI_GetProductByIDSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.682929ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |     639.715µs |                 | GET      "/api/v1/products/7ea91e6c-dc1b-4324-b39c-697b7a99a373"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.643479ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     628.352µs |                 | GET      "/api/v1/products/e4438e86-c2ca-4822-a29c-91b08be88f3e"
 --- PASS: TestProductAPI_GetProductByIDSuccess (0.00s)
 === RUN   TestProductAPI_GetProductByIDSuccessFromCache
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.636303ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |     509.317µs |                 | GET      "/api/v1/products/3674e3bf-f31a-48a5-b761-ada318a41b0f"
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.565878ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |     140.528µs |                 | GET      "/api/v1/products/3674e3bf-f31a-48a5-b761-ada318a41b0f"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.670746ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     546.949µs |                 | GET      "/api/v1/products/62a0bdf0-bab6-4dd5-aecd-11ef21974d13"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.613161ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     169.587µs |                 | GET      "/api/v1/products/62a0bdf0-bab6-4dd5-aecd-11ef21974d13"
 --- PASS: TestProductAPI_GetProductByIDSuccessFromCache (0.01s)
 === RUN   TestProductAPI_GetProductByIDNotFound
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.617012ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.638773ms |                 | POST     "/api/v1/auth/login"
 
-2024/02/03 17:53:19 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:126 [35;1mrecord not found
-[0m[33m[0.157ms] [34;1m[rows:0][0m SELECT * FROM "products" WHERE id = 'notfound'  ORDER BY "products"."id" LIMIT 1
-2024-02-03T17:53:19.714+0100	ERROR	http/handlers.go:51	Failed to get product detail: record not found
-[GIN] 2024/02/03 - 17:53:19 | 404 |     341.433µs |                 | GET      "/api/v1/products/notfound"
+2024/02/03 18:59:55 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:126 [35;1mrecord not found
+[0m[33m[0.154ms] [34;1m[rows:0][0m SELECT * FROM "products" WHERE id = 'notfound'  ORDER BY "products"."id" LIMIT 1
+2024-02-03T18:59:55.420+0100	ERROR	http/handlers.go:51	Failed to get product detail: record not found
+[GIN] 2024/02/03 - 18:59:55 | 404 |     346.002µs |                 | GET      "/api/v1/products/notfound"
 --- PASS: TestProductAPI_GetProductByIDNotFound (0.00s)
 === RUN   TestProductAPI_ListProductsSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    2.204157ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.044417ms |                 | GET      "/api/v1/products"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.619662ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.088552ms |                 | GET      "/api/v1/products"
 --- PASS: TestProductAPI_ListProductsSuccess (0.01s)
 === RUN   TestProductAPI_ListProductsSuccessFromCache
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.640646ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |     599.243µs |                 | GET      "/api/v1/products"
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.586499ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |     190.852µs |                 | GET      "/api/v1/products"
+[GIN] 2024/02/03 - 18:59:55 | 200 |      1.6348ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     630.619µs |                 | GET      "/api/v1/products"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.600106ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     165.755µs |                 | GET      "/api/v1/products"
 --- PASS: TestProductAPI_ListProductsSuccessFromCache (0.01s)
 === RUN   TestProductAPI_ListProductsNotFound
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.695171ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |     613.944µs |                 | GET      "/api/v1/products"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.641097ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     606.583µs |                 | GET      "/api/v1/products"
 --- PASS: TestProductAPI_ListProductsNotFound (0.00s)
 === RUN   TestProductAPI_ListProductsInvalidFieldType
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.652997ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.733+0100	ERROR	http/handlers.go:71	Failed to parse request query: strconv.ParseInt: parsing "a": invalid syntax
-[GIN] 2024/02/03 - 17:53:19 | 400 |      37.209µs |                 | GET      "/api/v1/products?page=a"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.631227ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.438+0100	ERROR	http/handlers.go:71	Failed to parse request query: strconv.ParseInt: parsing "a": invalid syntax
+[GIN] 2024/02/03 - 18:59:55 | 400 |      45.563µs |                 | GET      "/api/v1/products?page=a"
 --- PASS: TestProductAPI_ListProductsInvalidFieldType (0.00s)
 === RUN   TestProductAPI_ListProductsFindByNameSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.649256ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.214181ms |                 | GET      "/api/v1/products?name=test"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.619569ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.110867ms |                 | GET      "/api/v1/products?name=test"
 --- PASS: TestProductAPI_ListProductsFindByNameSuccess (0.01s)
 === RUN   TestProductAPI_ListProductsFindByNameNotFound
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.677145ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |      830.97µs |                 | GET      "/api/v1/products?name=notfound"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.610854ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     728.524µs |                 | GET      "/api/v1/products?name=notfound"
 --- PASS: TestProductAPI_ListProductsFindByNameNotFound (0.00s)
 === RUN   TestProductAPI_ListProductsFindByCodeSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.629419ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.121292ms |                 | GET      "/api/v1/products?code=P240203PB5EE"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.638056ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.040786ms |                 | GET      "/api/v1/products?code=P240203IM80C"
 --- PASS: TestProductAPI_ListProductsFindByCodeSuccess (0.01s)
 === RUN   TestProductAPI_ListProductsFindByCodeNotFound
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.632963ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |     744.879µs |                 | GET      "/api/v1/products?code=notfound"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.679512ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     759.357µs |                 | GET      "/api/v1/products?code=notfound"
 --- PASS: TestProductAPI_ListProductsFindByCodeNotFound (0.00s)
 === RUN   TestProductAPI_ListProductsWithPagination
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.665171ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |     854.256µs |                 | GET      "/api/v1/products?page=2&limit=2"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.613022ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     842.096µs |                 | GET      "/api/v1/products?page=2&limit=2"
 --- PASS: TestProductAPI_ListProductsWithPagination (0.01s)
 === RUN   TestProductAPI_ListProductsWithOrder
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.624973ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |     880.047µs |                 | GET      "/api/v1/products?order_by=name&order_desc=true"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.622607ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     905.176µs |                 | GET      "/api/v1/products?order_by=name&order_desc=true"
 --- PASS: TestProductAPI_ListProductsWithOrder (0.01s)
 === RUN   TestProductAPI_CreateProductSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.643202ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |     775.473µs |                 | POST     "/api/v1/products"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.637543ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     838.046µs |                 | POST     "/api/v1/products"
 --- PASS: TestProductAPI_CreateProductSuccess (0.00s)
 === RUN   TestProductAPI_CreateProductInvalidFieldType
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.640411ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.773+0100	ERROR	http/handlers.go:108	Failed to get bodyjson: cannot unmarshal string into Go struct field CreateProductReq.price of type float64
-[GIN] 2024/02/03 - 17:53:19 | 400 |      68.464µs |                 | POST     "/api/v1/products"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     1.63386ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.477+0100	ERROR	http/handlers.go:108	Failed to get bodyjson: cannot unmarshal string into Go struct field CreateProductReq.price of type float64
+[GIN] 2024/02/03 - 18:59:55 | 400 |      69.453µs |                 | POST     "/api/v1/products"
 --- PASS: TestProductAPI_CreateProductInvalidFieldType (0.00s)
 === RUN   TestProductAPI_CreateProductMissingName
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.626589ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.776+0100	ERROR	http/handlers.go:115	Failed to create productname is a required field
-[GIN] 2024/02/03 - 17:53:19 | 500 |      61.925µs |                 | POST     "/api/v1/products"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.620891ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.479+0100	ERROR	http/handlers.go:115	Failed to create productname is a required field
+[GIN] 2024/02/03 - 18:59:55 | 500 |      73.736µs |                 | POST     "/api/v1/products"
 --- PASS: TestProductAPI_CreateProductMissingName (0.00s)
 === RUN   TestProductAPI_CreateProductMissingDescription
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.625418ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.779+0100	ERROR	http/handlers.go:115	Failed to create productdescription is a required field
-[GIN] 2024/02/03 - 17:53:19 | 500 |      69.606µs |                 | POST     "/api/v1/products"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.607601ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.482+0100	ERROR	http/handlers.go:115	Failed to create productdescription is a required field
+[GIN] 2024/02/03 - 18:59:55 | 500 |      66.537µs |                 | POST     "/api/v1/products"
 --- PASS: TestProductAPI_CreateProductMissingDescription (0.00s)
 === RUN   TestProductAPI_CreateProductPriceLessThanZero
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.635371ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.782+0100	ERROR	http/handlers.go:115	Failed to create productprice must be greater than 0
-[GIN] 2024/02/03 - 17:53:19 | 500 |      79.641µs |                 | POST     "/api/v1/products"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.664631ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.486+0100	ERROR	http/handlers.go:115	Failed to create productprice must be greater than 0
+[GIN] 2024/02/03 - 18:59:55 | 500 |      97.948µs |                 | POST     "/api/v1/products"
 --- PASS: TestProductAPI_CreateProductPriceLessThanZero (0.00s)
 === RUN   TestProductAPI_CreateProductPriceEqualZero
-[GIN] 2024/02/03 - 17:53:19 | 200 |     1.63204ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.785+0100	ERROR	http/handlers.go:115	Failed to create productprice must be greater than 0
-[GIN] 2024/02/03 - 17:53:19 | 500 |      59.548µs |                 | POST     "/api/v1/products"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.656817ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.489+0100	ERROR	http/handlers.go:115	Failed to create productprice must be greater than 0
+[GIN] 2024/02/03 - 18:59:55 | 500 |      82.733µs |                 | POST     "/api/v1/products"
 --- PASS: TestProductAPI_CreateProductPriceEqualZero (0.00s)
 === RUN   TestProductAPI_CreateProductDuplicateName
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.745442ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.639993ms |                 | POST     "/api/v1/auth/login"
 
-2024/02/03 17:53:19 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:97 [35;1mERROR: duplicate key value violates unique constraint "idx_product_name" (SQLSTATE 23505)
-[0m[33m[0.673ms] [34;1m[rows:0][0m INSERT INTO "products" ("id","created_at","updated_at","deleted_at","code","name","description","price","active") VALUES ('fbecaf30-a5a1-4a5a-91ac-59175d80b338','2024-02-03 17:53:19.789','2024-02-03 17:53:19.789',NULL,'P240203WAN9Y','test-product','test-product',1.000000,true)
-2024-02-03T17:53:19.789+0100	ERROR	service/product.go:67	Create fail, error: ERROR: duplicate key value violates unique constraint "idx_product_name" (SQLSTATE 23505)
-2024-02-03T17:53:19.789+0100	ERROR	http/handlers.go:115	Failed to create productERROR: duplicate key value violates unique constraint "idx_product_name" (SQLSTATE 23505)
-[GIN] 2024/02/03 - 17:53:19 | 500 |     854.046µs |                 | POST     "/api/v1/products"
---- PASS: TestProductAPI_CreateProductDuplicateName (0.00s)
+2024/02/03 18:59:55 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:97 [35;1mERROR: duplicate key value violates unique constraint "idx_product_name" (SQLSTATE 23505)
+[0m[33m[1.259ms] [34;1m[rows:0][0m INSERT INTO "products" ("id","created_at","updated_at","deleted_at","code","name","description","price","active") VALUES ('2078272c-6284-4c21-8913-e7d0b55af4cd','2024-02-03 18:59:55.493','2024-02-03 18:59:55.493',NULL,'P240203NTG2Z','test-product','test-product',1.000000,true)
+2024-02-03T18:59:55.494+0100	ERROR	service/product.go:67	Create fail, error: ERROR: duplicate key value violates unique constraint "idx_product_name" (SQLSTATE 23505)
+2024-02-03T18:59:55.494+0100	ERROR	http/handlers.go:115	Failed to create productERROR: duplicate key value violates unique constraint "idx_product_name" (SQLSTATE 23505)
+[GIN] 2024/02/03 - 18:59:55 | 500 |    1.427003ms |                 | POST     "/api/v1/products"
+--- PASS: TestProductAPI_CreateProductDuplicateName (0.01s)
 === RUN   TestProductAPI_UpdateProductSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.644082ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.338005ms |                 | PUT      "/api/v1/products/2facd234-41eb-4306-8bec-128805160744"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.632437ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.228492ms |                 | PUT      "/api/v1/products/7ae439f5-8fd1-4860-9bea-6c3c282e103a"
 --- PASS: TestProductAPI_UpdateProductSuccess (0.01s)
 === RUN   TestProductAPI_UpdateProductInvalidFieldType
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.649782ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.798+0100	ERROR	http/handlers.go:139	Failed to get bodyjson: cannot unmarshal string into Go struct field UpdateProductReq.price of type float64
-[GIN] 2024/02/03 - 17:53:19 | 400 |      75.268µs |                 | PUT      "/api/v1/products/a7c6c2bb-8a86-4d99-ad49-e7cd4a9646a3"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.655823ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.503+0100	ERROR	http/handlers.go:139	Failed to get bodyjson: cannot unmarshal string into Go struct field UpdateProductReq.price of type float64
+[GIN] 2024/02/03 - 18:59:55 | 400 |      72.973µs |                 | PUT      "/api/v1/products/bc566d2b-6e7d-47c7-8246-5980478cce2e"
 --- PASS: TestProductAPI_UpdateProductInvalidFieldType (0.00s)
 === RUN   TestProductAPI_UpdateProductPriceLessThanZero
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.619194ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.802+0100	ERROR	http/handlers.go:146	Failed to update productprice must be 0 or greater
-[GIN] 2024/02/03 - 17:53:19 | 500 |      81.329µs |                 | PUT      "/api/v1/products/96763186-9a33-4a7d-99b8-cc9732cb2130"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.636965ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.507+0100	ERROR	http/handlers.go:146	Failed to update productprice must be 0 or greater
+[GIN] 2024/02/03 - 18:59:55 | 500 |      83.792µs |                 | PUT      "/api/v1/products/f1a4866b-8a01-43be-b0a7-b06e2e386e5c"
 --- PASS: TestProductAPI_UpdateProductPriceLessThanZero (0.00s)
 === RUN   TestProductAPI_UpdateProductNotFound
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.618475ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.683351ms |                 | POST     "/api/v1/auth/login"
 
-2024/02/03 17:53:19 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:126 [35;1mrecord not found
-[0m[33m[0.149ms] [34;1m[rows:0][0m SELECT * FROM "products" WHERE id = 'notfound'  ORDER BY "products"."id" LIMIT 1
-2024-02-03T17:53:19.805+0100	ERROR	service/product.go:81	Update.GetUserByID fail, id: notfound, error: record not found
-2024-02-03T17:53:19.805+0100	ERROR	http/handlers.go:146	Failed to update productrecord not found
-[GIN] 2024/02/03 - 17:53:19 | 500 |     269.246µs |                 | PUT      "/api/v1/products/notfound"
+2024/02/03 18:59:55 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:126 [35;1mrecord not found
+[0m[33m[0.163ms] [34;1m[rows:0][0m SELECT * FROM "products" WHERE id = 'notfound'  ORDER BY "products"."id" LIMIT 1
+2024-02-03T18:59:55.510+0100	ERROR	service/product.go:81	Update.GetUserByID fail, id: notfound, error: record not found
+2024-02-03T18:59:55.510+0100	ERROR	http/handlers.go:146	Failed to update productrecord not found
+[GIN] 2024/02/03 - 18:59:55 | 500 |     287.551µs |                 | PUT      "/api/v1/products/notfound"
 --- PASS: TestProductAPI_UpdateProductNotFound (0.00s)
 === RUN   TestUserAPI_LoginSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.671371ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.608382ms |                 | POST     "/api/v1/auth/login"
 --- PASS: TestUserAPI_LoginSuccess (0.00s)
 === RUN   TestUserAPI_LoginInvalidFieldType
-2024-02-03T17:53:19.810+0100	ERROR	http/handlers.go:37	Failed to get body json: cannot unmarshal number into Go struct field LoginReq.email of type string
-[GIN] 2024/02/03 - 17:53:19 | 400 |      92.277µs |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.515+0100	ERROR	http/handlers.go:37	Failed to get body json: cannot unmarshal number into Go struct field LoginReq.email of type string
+[GIN] 2024/02/03 - 18:59:55 | 400 |      50.792µs |                 | POST     "/api/v1/auth/login"
 --- PASS: TestUserAPI_LoginInvalidFieldType (0.00s)
 === RUN   TestUserAPI_LoginInvalidEmailFormat
-2024-02-03T17:53:19.811+0100	ERROR	http/handlers.go:44	Failed to login email must be a valid email address
-[GIN] 2024/02/03 - 17:53:19 | 500 |      51.939µs |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.515+0100	ERROR	http/handlers.go:44	Failed to login email must be a valid email address
+[GIN] 2024/02/03 - 18:59:55 | 500 |      60.177µs |                 | POST     "/api/v1/auth/login"
 --- PASS: TestUserAPI_LoginInvalidEmailFormat (0.00s)
 === RUN   TestUserAPI_LoginInvalidPassword
-2024-02-03T17:53:19.811+0100	ERROR	http/handlers.go:44	Failed to login password is not strong enough, password must be at least 6 characters
-[GIN] 2024/02/03 - 17:53:19 | 500 |       49.94µs |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.515+0100	ERROR	http/handlers.go:44	Failed to login password is not strong enough, password must be at least 6 characters
+[GIN] 2024/02/03 - 18:59:55 | 500 |      51.575µs |                 | POST     "/api/v1/auth/login"
 --- PASS: TestUserAPI_LoginInvalidPassword (0.00s)
 === RUN   TestUserAPI_LoginUserNotFound
 
-2024/02/03 17:53:19 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:138 [35;1mrecord not found
-[0m[33m[0.214ms] [34;1m[rows:0][0m SELECT * FROM "users" WHERE email = ('notfound@test.com') ORDER BY id,"users"."id" LIMIT 1
-2024-02-03T17:53:19.811+0100	ERROR	service/user.go:48	Login.GetUserByEmail fail, email: notfound@test.com, error: record not found
-2024-02-03T17:53:19.811+0100	ERROR	http/handlers.go:44	Failed to login record not found
-[GIN] 2024/02/03 - 17:53:19 | 500 |     319.357µs |                 | POST     "/api/v1/auth/login"
+2024/02/03 18:59:55 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:138 [35;1mrecord not found
+[0m[33m[0.191ms] [34;1m[rows:0][0m SELECT * FROM "users" WHERE email = ('notfound@test.com') ORDER BY id,"users"."id" LIMIT 1
+2024-02-03T18:59:55.516+0100	ERROR	service/user.go:48	Login.GetUserByEmail fail, email: notfound@test.com, error: record not found
+2024-02-03T18:59:55.516+0100	ERROR	http/handlers.go:44	Failed to login record not found
+[GIN] 2024/02/03 - 18:59:55 | 500 |     323.076µs |                 | POST     "/api/v1/auth/login"
 --- PASS: TestUserAPI_LoginUserNotFound (0.00s)
 === RUN   TestUserAPI_LoginUserWrongPassword
-2024-02-03T17:53:19.813+0100	ERROR	http/handlers.go:44	Failed to login wrong password
-[GIN] 2024/02/03 - 17:53:19 | 500 |    1.704301ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.518+0100	ERROR	http/handlers.go:44	Failed to login wrong password
+[GIN] 2024/02/03 - 18:59:55 | 500 |    1.603054ms |                 | POST     "/api/v1/auth/login"
 --- PASS: TestUserAPI_LoginUserWrongPassword (0.00s)
 === RUN   TestUserAPI_RegisterSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    2.131406ms |                 | POST     "/api/v1/auth/register"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    2.009717ms |                 | POST     "/api/v1/auth/register"
 --- PASS: TestUserAPI_RegisterSuccess (0.00s)
 === RUN   TestUserAPI_RegisterInvalidFieldType
-2024-02-03T17:53:19.817+0100	ERROR	http/handlers.go:67	Failed to get bodyjson: cannot unmarshal number into Go struct field RegisterReq.email of type string
-[GIN] 2024/02/03 - 17:53:19 | 400 |      43.044µs |                 | POST     "/api/v1/auth/register"
+2024-02-03T18:59:55.521+0100	ERROR	http/handlers.go:67	Failed to get bodyjson: cannot unmarshal number into Go struct field RegisterReq.email of type string
+[GIN] 2024/02/03 - 18:59:55 | 400 |      40.747µs |                 | POST     "/api/v1/auth/register"
 --- PASS: TestUserAPI_RegisterInvalidFieldType (0.00s)
 === RUN   TestUserAPI_RegisterInvalidEmail
-2024-02-03T17:53:19.817+0100	ERROR	http/handlers.go:74	email must be a valid email address
-[GIN] 2024/02/03 - 17:53:19 | 500 |      52.339µs |                 | POST     "/api/v1/auth/register"
+2024-02-03T18:59:55.521+0100	ERROR	http/handlers.go:74	email must be a valid email address
+[GIN] 2024/02/03 - 18:59:55 | 500 |      47.353µs |                 | POST     "/api/v1/auth/register"
 --- PASS: TestUserAPI_RegisterInvalidEmail (0.00s)
 === RUN   TestUserAPI_RegisterInvalidPassword
-2024-02-03T17:53:19.817+0100	ERROR	http/handlers.go:74	password is not strong enough, password must be at least 6 characters
-[GIN] 2024/02/03 - 17:53:19 | 500 |      48.799µs |                 | POST     "/api/v1/auth/register"
+2024-02-03T18:59:55.521+0100	ERROR	http/handlers.go:74	password is not strong enough, password must be at least 6 characters
+[GIN] 2024/02/03 - 18:59:55 | 500 |      48.129µs |                 | POST     "/api/v1/auth/register"
 --- PASS: TestUserAPI_RegisterInvalidPassword (0.00s)
 === RUN   TestUserAPI_RegisterEmailExist
 
-2024/02/03 17:53:19 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:97 [35;1mERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
-[0m[33m[1.841ms] [34;1m[rows:0][0m INSERT INTO "users" ("id","created_at","updated_at","deleted_at","email","password","role") VALUES ('f6d95c5d-5646-4e28-8470-255d0358a14f','2024-02-03 17:53:19.82','2024-02-03 17:53:19.82',NULL,'emailexist@test.com','$2a$04$aPG6ZViPnEE6Tmz25AbIcOHeXZuXIuQtfhkeaQ3mmqoIiknHBBy5O','customer')
-2024-02-03T17:53:19.821+0100	ERROR	service/user.go:75	Register.Create fail, email: emailexist@test.com, error: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
-2024-02-03T17:53:19.821+0100	ERROR	http/handlers.go:74	ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
-[GIN] 2024/02/03 - 17:53:19 | 500 |    1.971721ms |                 | POST     "/api/v1/auth/register"
+2024/02/03 18:59:55 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:97 [35;1mERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+[0m[33m[1.828ms] [34;1m[rows:0][0m INSERT INTO "users" ("id","created_at","updated_at","deleted_at","email","password","role") VALUES ('e9e8e4c1-190d-43aa-8116-000e92cb355a','2024-02-03 18:59:55.525','2024-02-03 18:59:55.525',NULL,'emailexist@test.com','$2a$04$xaoBulXYCE.6XijzbSIf7erteugJWJxRMFZWdMQMOftt8fSinVlKO','customer')
+2024-02-03T18:59:55.525+0100	ERROR	service/user.go:75	Register.Create fail, email: emailexist@test.com, error: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+2024-02-03T18:59:55.525+0100	ERROR	http/handlers.go:74	ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+[GIN] 2024/02/03 - 18:59:55 | 500 |     1.94799ms |                 | POST     "/api/v1/auth/register"
 --- PASS: TestUserAPI_RegisterEmailExist (0.01s)
 === RUN   TestUserAPI_GetMeSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.650796ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |     442.529µs |                 | GET      "/api/v1/auth/me"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     1.68809ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     475.956µs |                 | GET      "/api/v1/auth/me"
 --- PASS: TestUserAPI_GetMeSuccess (0.00s)
 === RUN   TestUserAPI_GetMeUnauthorized
-[GIN] 2024/02/03 - 17:53:19 | 401 |       2.547µs |                 | GET      "/api/v1/auth/me"
+[GIN] 2024/02/03 - 18:59:55 | 401 |       2.398µs |                 | GET      "/api/v1/auth/me"
 --- PASS: TestUserAPI_GetMeUnauthorized (0.00s)
 === RUN   TestUserAPI_GetMeUserNotFound
 
-2024/02/03 17:53:19 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:126 [35;1mrecord not found
-[0m[33m[0.223ms] [34;1m[rows:0][0m SELECT * FROM "users" WHERE id = 'user-not-found'  ORDER BY "users"."id" LIMIT 1
-2024-02-03T17:53:19.825+0100	ERROR	service/user.go:84	GetUserByID fail, id: user-not-found, error: record not found
-2024-02-03T17:53:19.825+0100	ERROR	http/handlers.go:101	record not found
-[GIN] 2024/02/03 - 17:53:19 | 500 |     337.081µs |                 | GET      "/api/v1/auth/me"
+2024/02/03 18:59:55 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:126 [35;1mrecord not found
+[0m[33m[0.237ms] [34;1m[rows:0][0m SELECT * FROM "users" WHERE id = 'user-not-found'  ORDER BY "users"."id" LIMIT 1
+2024-02-03T18:59:55.529+0100	ERROR	service/user.go:84	GetUserByID fail, id: user-not-found, error: record not found
+2024-02-03T18:59:55.529+0100	ERROR	http/handlers.go:101	record not found
+[GIN] 2024/02/03 - 18:59:55 | 500 |     359.102µs |                 | GET      "/api/v1/auth/me"
 --- PASS: TestUserAPI_GetMeUserNotFound (0.00s)
 === RUN   TestUserAPI_GetMeInvalidTokenType
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.630598ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 401 |      36.234µs |                 | GET      "/api/v1/auth/me"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.606561ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 401 |      45.752µs |                 | GET      "/api/v1/auth/me"
 --- PASS: TestUserAPI_GetMeInvalidTokenType (0.00s)
 === RUN   TestUserAPI_RefreshTokenSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.649682ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 200 |     350.985µs |                 | POST     "/api/v1/auth/refresh"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    2.210935ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     329.071µs |                 | POST     "/api/v1/auth/refresh"
 --- PASS: TestUserAPI_RefreshTokenSuccess (0.00s)
 === RUN   TestUserAPI_RefreshTokenUnauthorized
-[GIN] 2024/02/03 - 17:53:19 | 401 |       2.158µs |                 | POST     "/api/v1/auth/refresh"
+[GIN] 2024/02/03 - 18:59:55 | 401 |        2.36µs |                 | POST     "/api/v1/auth/refresh"
 --- PASS: TestUserAPI_RefreshTokenUnauthorized (0.00s)
 === RUN   TestUserAPI_RefreshTokenInvalidTokenType
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.659467ms |                 | POST     "/api/v1/auth/login"
-[GIN] 2024/02/03 - 17:53:19 | 401 |      38.616µs |                 | POST     "/api/v1/auth/refresh"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.625787ms |                 | POST     "/api/v1/auth/login"
+[GIN] 2024/02/03 - 18:59:55 | 401 |      29.315µs |                 | POST     "/api/v1/auth/refresh"
 --- PASS: TestUserAPI_RefreshTokenInvalidTokenType (0.00s)
 === RUN   TestUserAPI_RefreshTokenUserNotFound
 
-2024/02/03 17:53:19 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:126 [35;1mrecord not found
-[0m[33m[0.765ms] [34;1m[rows:0][0m SELECT * FROM "users" WHERE id = 'user-not-found'  ORDER BY "users"."id" LIMIT 1
-2024-02-03T17:53:19.832+0100	ERROR	service/user.go:94	RefreshToken.GetUserByID fail, id: user-not-found, error: record not found
-2024-02-03T17:53:19.832+0100	ERROR	http/handlers.go:120	Failed to refresh tokenrecord not found
-[GIN] 2024/02/03 - 17:53:19 | 500 |    1.098823ms |                 | POST     "/api/v1/auth/refresh"
+2024/02/03 18:59:55 [31;1m/Users/splax/Documents/codes/golang/goshop/pkg/dbs/dbs.go:126 [35;1mrecord not found
+[0m[33m[0.239ms] [34;1m[rows:0][0m SELECT * FROM "users" WHERE id = 'user-not-found'  ORDER BY "users"."id" LIMIT 1
+2024-02-03T18:59:55.536+0100	ERROR	service/user.go:94	RefreshToken.GetUserByID fail, id: user-not-found, error: record not found
+2024-02-03T18:59:55.536+0100	ERROR	http/handlers.go:120	Failed to refresh tokenrecord not found
+[GIN] 2024/02/03 - 18:59:55 | 500 |     354.819µs |                 | POST     "/api/v1/auth/refresh"
 --- PASS: TestUserAPI_RefreshTokenUserNotFound (0.00s)
 === RUN   TestUserAPI_ChangePasswordSuccess
-[GIN] 2024/02/03 - 17:53:19 | 200 |    4.198509ms |                 | PUT      "/api/v1/auth/change-password"
+[GIN] 2024/02/03 - 18:59:55 | 200 |     3.71834ms |                 | PUT      "/api/v1/auth/change-password"
 --- PASS: TestUserAPI_ChangePasswordSuccess (0.01s)
 === RUN   TestUserAPI_ChangePasswordUnauthorized
-[GIN] 2024/02/03 - 17:53:19 | 401 |       3.979µs |                 | PUT      "/api/v1/auth/change-password"
+[GIN] 2024/02/03 - 18:59:55 | 401 |       3.435µs |                 | PUT      "/api/v1/auth/change-password"
 --- PASS: TestUserAPI_ChangePasswordUnauthorized (0.00s)
 === RUN   TestUserAPI_ChangePasswordIsWrong
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.996627ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.844+0100	ERROR	http/handlers.go:150	wrong password
-[GIN] 2024/02/03 - 17:53:19 | 500 |    1.818066ms |                 | PUT      "/api/v1/auth/change-password"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.636155ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.546+0100	ERROR	http/handlers.go:150	wrong password
+[GIN] 2024/02/03 - 18:59:55 | 500 |    1.653943ms |                 | PUT      "/api/v1/auth/change-password"
 --- PASS: TestUserAPI_ChangePasswordIsWrong (0.00s)
 === RUN   TestUserAPI_ChangePasswordInvalidNewPassword
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.913223ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.846+0100	ERROR	http/handlers.go:150	new_password is not strong enough, password must be at least 6 characters
-[GIN] 2024/02/03 - 17:53:19 | 500 |      109.23µs |                 | PUT      "/api/v1/auth/change-password"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.644655ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.548+0100	ERROR	http/handlers.go:150	new_password is not strong enough, password must be at least 6 characters
+[GIN] 2024/02/03 - 18:59:55 | 500 |      60.207µs |                 | PUT      "/api/v1/auth/change-password"
 --- PASS: TestUserAPI_ChangePasswordInvalidNewPassword (0.00s)
 === RUN   TestUserAPI_ChangePasswordInvalidFieldType
-[GIN] 2024/02/03 - 17:53:19 | 200 |    1.764533ms |                 | POST     "/api/v1/auth/login"
-2024-02-03T17:53:19.848+0100	ERROR	http/handlers.go:142	Failed to get bodyjson: cannot unmarshal number into Go struct field ChangePasswordReq.password of type string
-[GIN] 2024/02/03 - 17:53:19 | 400 |       71.86µs |                 | PUT      "/api/v1/auth/change-password"
+[GIN] 2024/02/03 - 18:59:55 | 200 |    1.622091ms |                 | POST     "/api/v1/auth/login"
+2024-02-03T18:59:55.550+0100	ERROR	http/handlers.go:142	Failed to get bodyjson: cannot unmarshal number into Go struct field ChangePasswordReq.password of type string
+[GIN] 2024/02/03 - 18:59:55 | 400 |      66.437µs |                 | PUT      "/api/v1/auth/change-password"
 --- PASS: TestUserAPI_ChangePasswordInvalidFieldType (0.00s)
 PASS
 coverage: 30.2% of statements in ./...
-ok  	goshop/test/http	9.835s	coverage: 30.2% of statements in ./...
+ok  	goshop/test/http	9.700s	coverage: 30.2% of statements in ./...
