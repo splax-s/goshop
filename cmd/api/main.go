@@ -1,6 +1,8 @@
 package main
 
 import (
+	"crypto/tls"
+
 	"github.com/quangdangfit/gocommon/logger"
 	"github.com/quangdangfit/gocommon/validation"
 
@@ -51,6 +53,9 @@ func main() {
 		Address:  cfg.RedisURI,
 		Password: cfg.RedisPassword,
 		Database: cfg.RedisDB,
+		TLSConfig: &tls.Config{
+			InsecureSkipVerify: true, // Set this to false in production with a proper CA certificate
+		},
 	})
 
 	go func() {
