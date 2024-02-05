@@ -2,6 +2,7 @@ package redis
 
 import (
 	"context"
+	"crypto/tls"
 	"encoding/json"
 	"time"
 
@@ -43,10 +44,15 @@ func New(config Config) IRedis {
 	ctx, cancel := context.WithTimeout(context.Background(), Timeout*time.Second)
 	defer cancel()
 
+	tlsConfig := &tls.Config{
+		InsecureSkipVerify: true, // You might want to set this to false in a production environment
+	}
+
 	rdb := goredis.NewClient(&goredis.Options{
-		Addr:     config.Address,
-		Password: config.Password,
-		DB:       config.Database,
+		Addr:      config.Address,
+		Password:  config.Password,
+		DB:        config.Database,
+		TLSConfig: tlsConfig,
 	})
 
 	pong, err := rdb.Ping(ctx).Result()
