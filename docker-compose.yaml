@@ -8,7 +8,7 @@ services:
     environment:
       port: 8888
       auth_secret: auth_secret
-      database_uri: postgres://splax:Killindem1@postgres:5432/postgres?sslmode=disable
+      database_uri: postgres://default:Q6oNEVtmWxL2@ep-sparkling-bonus-a47f7s5x-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb
       redis_uri: redis:6379
       redis_db: 0
 
@@ -26,3 +26,4 @@ services:
       POSTGRES_USER: splax
       POSTGRES_PASSWORD: Killindem1
       POSTGRES_DB: postgres
+      POSTGRES_URL: postgres://splax:Killindem1@postgres:5432/postgres

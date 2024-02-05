@@ -3,7 +3,7 @@ http_port: 8888
 grpc_port: 8889
 auth_secret: fsgdhjkggfutydrseawttrheytrdfd6jdhdujtdswejydutyeh5ek5786,9760re9w84ma874a s5 ,44..y//0[{?,y88t}]arsarhae
 
-database_uri: postgres://splax:Killindem1@postgres:5432/postgres
+database_uri: postgres://default:Q6oNEVtmWxL2@ep-sparkling-bonus-a47f7s5x-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb
 
 redis_uri: localhost:6379
 redis_password:

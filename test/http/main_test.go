@@ -13,6 +13,10 @@ import (
 	"github.com/quangdangfit/gocommon/logger"
 	"github.com/quangdangfit/gocommon/validation"
 
+	// The `orderModel` package is responsible for defining the data model and database operations related to orders in the
+	// application. It includes the definition of the `Order` and `OrderLine` structs, which represent an order and its
+	// associated order lines respectively. The package also includes functions for creating, updating, and querying orders in
+	// the database.
 	orderModel "goshop/internal/order/model"
 	productModel "goshop/internal/product/model"
 	httpServer "goshop/internal/server/http"
