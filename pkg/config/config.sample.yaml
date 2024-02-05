@@ -5,6 +5,6 @@ auth_secret: fsgdhjkggfutydrseawttrheytrdfd6jdhdujtdswejydutyeh5ek5786,9760re9w8
 
 database_uri: postgres://default:Q6oNEVtmWxL2@ep-sparkling-bonus-a47f7s5x-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb
 
-redis_uri: localhost:6379
+redis_uri: rediss://red-cn0g5d8l5elc73ejhhdg:pGYEnx5aqyt4HEicNRNmtJi4dHrGFVYV@oregon-redis.render.com:6379
 redis_password:
 redis_db: 0
