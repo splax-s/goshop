@@ -5,6 +5,6 @@ auth_secret: fsgdhjkggfutydrseawttrheytrdfd6jdhdujtdswejydutyeh5ek5786,9760re9w8
 
 database_uri: postgres://splax:7xAWLOaGrtauININ3ZyKJFnVQiWtcWYk@dpg-cn0gpiv109ks73bge170-a/verceldb_5rmp
 
-redis_uri: rediss://red-cn0g5d8l5elc73ejhhdg:pGYEnx5aqyt4HEicNRNmtJi4dHrGFVYV@oregon-redis.render.com:6379
+redis_uri: redis://red-cn0g5d8l5elc73ejhhdg:6379
 redis_password: pGYEnx5aqyt4HEicNRNmtJi4dHrGFVYV
 redis_db: 0
